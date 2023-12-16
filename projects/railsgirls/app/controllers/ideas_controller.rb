@@ -8,6 +8,7 @@ class IdeasController < ApplicationController
 
   # GET /ideas/1 or /ideas/1.json
   def show
+    @comments = @idea.comments
   end
 
   # GET /ideas/new
@@ -67,4 +68,6 @@ class IdeasController < ApplicationController
     def idea_params
       params.require(:idea).permit(:name, :description, :picture)
     end
-end
+  end
+    
+  
